@@ -38,7 +38,7 @@ export const chatQueries = `
 
 getChats: [chat]
 getChatId(id: Int!): chat
-getChatUser(name: String!): [chat]
+getChatUser(name: String!): [chat]  
 
 `
 
