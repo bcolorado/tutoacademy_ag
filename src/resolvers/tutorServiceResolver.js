@@ -16,7 +16,7 @@ export const tutorServiceResolver = {
 	},
 	Mutation: {
 		createAptitude: (_, { aptitude }) => Promise.resolve(generalRequest(URL, 'POST', aptitude)).then((value) => { return value}),
-		updateAptitude: (_, { id, aptitude }) => Promise.resolve(generalRequest(`${URL}/${id}`, 'PUT', aptitude)).then((value) => { console.log(aptitude); return value}),
+		updateAptitude: (_, { id, aptitude }) => Promise.resolve(generalRequest(`${URL}/${id}`, 'PUT', aptitude)).then((value) => { return value}),
 		deleteAptitude: (_, { id }) => Promise.resolve(generalRequest(`${URL}/${id}`, 'DELETE')).then((value) => { return value}),
 
 		createService: (_, { service }) => Promise.resolve(generalRequest(URLService, 'POST', service)).then((value) => { return value}),
