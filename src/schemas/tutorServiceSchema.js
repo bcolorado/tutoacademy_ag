@@ -1,4 +1,4 @@
-export const aptitudeTypeDef = `
+export const tutorServiceTypeDef = `
   type Aptitude {
       idRate: ID!
       service: tutorService!
@@ -6,6 +6,19 @@ export const aptitudeTypeDef = `
       aptitudeName: String!
       aptitudeRate: Float!
       aptitudeState: Boolean!
+  }
+
+  type Service {
+    idService: ID!
+    idProfile: ID!
+    description: String!
+    serviceState: Boolean!
+  }
+
+  input ServiceInput {
+    idProfile: ID
+    description: String
+    serviceState: Boolean
   }
 
   type tutorService{
@@ -30,13 +43,21 @@ export const aptitudeTypeDef = `
     serviceState: Boolean
   }`;
 
-export const aptitudeQueries = `
+export const tutorServiceQueries = `
       allAptitudes: [Aptitude]
       aptitudeById(id: Int!): Aptitude
+
+      allServices: [Service]
+      serviceById(id: Int!): Service
+
   `;
 
-export const aptitudeMutations = `
+export const tutorServiceMutations = `
     createAptitude(aptitude: AptitudeInput!): Aptitude
     updateAptitude(id: Int!, aptitude: AptitudeInput!): Aptitude
     deleteAptitude(id: Int!): String
+
+    createService(service: ServiceInput!): Service
+    updateService(id: Int!, service: ServiceInput!): Service
+    deleteService(id: Int!): String
 `;
