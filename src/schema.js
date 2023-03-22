@@ -3,6 +3,8 @@ import {resolvers} from "./resolvers"
 import {profileTypeDef,profileQueries,profileMutations} from "./schemas/profileSchema"
 import {chatQueries,chatMutations, chatTypeDef} from "./schemas/chatSchema"
 import {userQueries, userMutations, userTypeDef} from "./schemas/userSchema"
+import {aptitudeQueries, aptitudeMutations, aptitudeTypeDef} from "./schemas/aptitudeSchema"
+import {serviceQueries, serviceMutations, serviceTypeDef} from "./schemas/serviceSchema"
 const typeDefs = profileTypeDef;
 import { mergeSchemas } from '../utilities/utilities';
 
@@ -10,13 +12,13 @@ import { mergeSchemas } from '../utilities/utilities';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
-		profileTypeDef, chatTypeDef, userTypeDef
+		profileTypeDef, chatTypeDef, userTypeDef, aptitudeTypeDef, serviceTypeDef
 	],
 	[
-		profileQueries, chatQueries, userQueries
+		profileQueries, chatQueries, userQueries, aptitudeQueries, serviceQueries
 	],
 	[
-		profileMutations, chatMutations, userMutations
+		profileMutations, chatMutations, userMutations, aptitudeMutations, serviceMutations
 	],
 	
 );
