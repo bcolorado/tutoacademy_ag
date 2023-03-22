@@ -3,9 +3,9 @@ import {resolvers} from "./resolvers"
 import {profileTypeDef,profileQueries,profileMutations} from "./schemas/profileSchema"
 import {chatQueries,chatMutations, chatTypeDef} from "./schemas/chatSchema"
 import {userQueries, userMutations, userTypeDef} from "./schemas/userSchema"
-import {aptitudeQueries, aptitudeMutations, aptitudeTypeDef} from "./schemas/aptitudeSchema"
-import {serviceQueries, serviceMutations, serviceTypeDef} from "./schemas/serviceSchema"
+import {tutorServiceQueries, tutorServiceMutations, tutorServiceTypeDef} from "./schemas/tutorServiceSchema"
 import {requestQueries, requestMutations, requestTypeDef, meetingQueries, meetingMutations, meetingTypeDef} from "./schemas/meetschedSchema"
+
 const typeDefs = profileTypeDef;
 import { mergeSchemas } from '../utilities/utilities';
 
@@ -13,13 +13,13 @@ import { mergeSchemas } from '../utilities/utilities';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
-		profileTypeDef, chatTypeDef, userTypeDef, aptitudeTypeDef, serviceTypeDef, requestTypeDef, meetingTypeDef
+		profileTypeDef, chatTypeDef, userTypeDef, tutorServiceTypeDef, requestTypeDef, meetingTypeDef
 	],
 	[
-		profileQueries, chatQueries, userQueries, aptitudeQueries, serviceQueries, requestQueries, meetingQueries
+		profileQueries, chatQueries, userQueries, tutorServiceQueries, requestQueries, meetingQueries
 	],
 	[
-		profileMutations, chatMutations, userMutations, aptitudeMutations, serviceMutations, requestMutations, meetingMutations
+		profileMutations, chatMutations, userMutations, tutorServiceMutations, requestMutations, meetingMutations
 	],
 	
 );
