@@ -1,7 +1,7 @@
 export const chatTypeDef = ` type chat {
     chatId: Int,
-    sender: String,
-    receiver: String,
+    sender: profile,
+    receiver: profile,
     messages: [messageSchema],
     state: Boolean,
     createTime: String
@@ -18,7 +18,7 @@ input chatInput {
 
 type messageSchema {
     messageId: Int,
-    sender: String,
+    sender: profile,
     body: String,
     sendTime: String
 }

@@ -1,8 +1,9 @@
 import { generalRequest } from '../../utilities/utilities';
+import { URLtutorservice} from '../server';
 
-const URL = 'http://localhost:8080/rates';
+const URL = `${URLtutorservice}/rates`;
 
-const URLService = 'http://localhost:8080/services';
+const URLService = `${URLtutorservice}/services`;
 
 export const tutorServiceResolver = {
 	Query: {

@@ -3,9 +3,9 @@ import {profileResolvers} from './resolvers/profileResolver'
 import {chatResolvers} from './resolvers/chatResolver'
 import {userResolvers} from "./resolvers/userResolver"
 import {tutorServiceResolver} from "./resolvers/tutorServiceResolver"
-import {requestResolvers, meetingResolvers} from "./resolvers/meetschedResolvers"
+import {meetschedResolvers} from "./resolvers/meetschedResolvers"
 import merge from 'lodash.merge';
 
 export const resolvers= merge(
-    profileResolvers, chatResolvers, userResolvers, tutorServiceResolver, requestResolvers, meetingResolvers
+    profileResolvers, chatResolvers, userResolvers, tutorServiceResolver, meetschedResolvers
 )
