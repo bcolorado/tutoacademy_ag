@@ -1,5 +1,5 @@
 export const profileTypeDef = ` type profile {
-    userID: String,
+    userID: user,
     fullname: String,
     gender: String,
     birthdate: String,
@@ -59,7 +59,7 @@ findProfiles(value: String!): [profile]
 
 export const profileMutations = `
 
-createProfile(profile: profileInput!): profile
+createProfile(profile: profileInput!): String
 updateProfile(profile: profileInput!): String
 
 `
