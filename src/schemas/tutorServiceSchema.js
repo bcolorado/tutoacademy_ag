@@ -2,7 +2,7 @@ export const tutorServiceTypeDef = `
   type Aptitude {
       idRate: ID!
       service: tutorService!
-      idQualifier: ID!
+      idQualifier: profile
       aptitudeName: String!
       aptitudeRate: Float!
       aptitudeState: Boolean!
@@ -10,27 +10,27 @@ export const tutorServiceTypeDef = `
 
   type Service {
     idService: ID!
-    idProfile: ID!
+    idProfile: profile
     description: String!
     serviceState: Boolean!
   }
 
   input ServiceInput {
-    idProfile: ID
+    idProfile: String
     description: String
     serviceState: Boolean
   }
 
   type tutorService{
     idService: ID!
-    idProfile: ID
+    idProfile: profile
     description: String
     serviceState: Boolean
   }
 
   input AptitudeInput {
       service: serviceInput
-      idQualifier: ID
+      idQualifier: String
       aptitudeName: String
       aptitudeRate: Float
       aptitudeState: Boolean
@@ -38,7 +38,7 @@ export const tutorServiceTypeDef = `
 
   input serviceInput{
     idService: ID!
-    idProfile: ID
+    idProfile: String
     description: String
     serviceState: Boolean
   }`;
