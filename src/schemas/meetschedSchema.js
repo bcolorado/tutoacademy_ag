@@ -1,16 +1,16 @@
 export const meetschedTypeDef = `
   type Request {
       id:ID!
-      user_req: String!
-      tutor: String!
+      user_req: profile!
+      tutor: profile!
       message: String!
       created_at: String!
       scheduled_time: String!
       accepted: String!
   }
   input RequestInput {
-      user_req: String!
-      tutor: String!
+      user_req: Int!
+      tutor: Int!
       message: String!
       scheduled_time: String!
       accepted: String!
@@ -38,8 +38,8 @@ export const meetschedQueries = `
   `;
 
 export const meetschedMutations = `
-    createRequest(request: RequestInput!): Request!
-    updateRequest(id: Int!, request: RequestInput!): Request!
+    createRequest(request: RequestInput!): String!
+    updateRequest(id: Int!, request: RequestInput!): String!
     deleteRequest(id: Int!): Int
     createMeeting(id: Int!, meeting: MeetingInput!): Meeting!
     updateMeeting(id: Int!, meeting: MeetingInput!): Meeting!
