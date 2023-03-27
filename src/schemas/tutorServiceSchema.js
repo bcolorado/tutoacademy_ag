@@ -53,11 +53,11 @@ export const tutorServiceQueries = `
   `;
 
 export const tutorServiceMutations = `
-    createAptitude(aptitude: AptitudeInput!): Aptitude
-    updateAptitude(id: Int!, aptitude: AptitudeInput!): Aptitude
+    createAptitude(aptitude: AptitudeInput!): String
+    updateAptitude(id: Int!, aptitude: AptitudeInput!): String
     deleteAptitude(id: Int!): String
 
-    createService(service: ServiceInput!): Service
-    updateService(id: Int!, service: ServiceInput!): Service
+    createService(service: ServiceInput!): String
+    updateService(id: Int!, service: ServiceInput!): String
     deleteService(id: Int!): String
 `;
