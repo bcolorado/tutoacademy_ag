@@ -9,8 +9,8 @@ export const meetschedTypeDef = `
       accepted: String!
   }
   input RequestInput {
-      user_req: Int!
-      tutor: Int!
+      user_req: String!
+      tutor: String!
       message: String!
       scheduled_time: String!
       accepted: String!
