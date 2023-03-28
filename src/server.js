@@ -1,5 +1,5 @@
 export const URLprofile = 'http://host.docker.internal:5001'
 export const URLchat = 'http://host.docker.internal:8000'
-export const URLmeetsched = 'http://localhost:3000'
+export const URLmeetsched = 'http://host.docker.internal:3000'
 export const URLtutorservice = 'http://localhost:8080'
 export const URLauth = 'http://host.docker.internal:3002'
