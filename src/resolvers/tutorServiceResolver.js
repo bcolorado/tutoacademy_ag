@@ -28,8 +28,8 @@ export const tutorServiceResolver = {
                 // querys conditions definition
                 let idQualifier = await generalRequest(`${URLprofile}/profile/get/${aptitude.idQualifier}`, '').then((value) => {return value});
                 // conditions
-				if(idQualifier.profiles==null){console.log("IdProfile provided is not valid")} else{
-					return Promise.resolve(generalRequest(URL, 'POST', aptitude)).then((value) => { return value})}
+				if(idQualifier.profiles==null){return "IdProfile provided is not valid"} else{
+					return Promise.resolve(generalRequest(URL, 'POST', aptitude)).then((value) => { return "Request done successfully "})}
                 
               })()
         }, 
@@ -39,11 +39,11 @@ export const tutorServiceResolver = {
 				if (aptitude.idQualifier!=null){
 					let idQualifier = await generalRequest(`${URLprofile}/profile/get/${aptitude.idQualifier}`, '').then((value) => {return value});
 
-					if(idQualifier.profiles==null){console.log("IdProfile provided is not valid")} else{
-						return  Promise.resolve(generalRequest(`${URL}/${id}`, 'PUT', aptitude)).then((value) => { return value})}
+					if(idQualifier.profiles==null){return "IdProfile provided is not valid"} else{
+						return  Promise.resolve(generalRequest(`${URL}/${id}`, 'PUT', aptitude)).then((value) => { return "Request done successfully "})}
 
 				} else {
-					return  Promise.resolve(generalRequest(`${URL}/${id}`, 'PUT', aptitude)).then((value) => { return value})
+					return  Promise.resolve(generalRequest(`${URL}/${id}`, 'PUT', aptitude)).then((value) => { return "Request done successfully "})
 				}
                 
               })()
@@ -56,8 +56,8 @@ export const tutorServiceResolver = {
                 // querys conditions definition
                 let idProfile = await generalRequest(`${URLprofile}/profile/get/${service.idProfile}`, '').then((value) => {return value});
                 // conditions
-				if(idProfile.profiles==null){console.log("IdProfile provided is not valid")} else{
-					return Promise.resolve(generalRequest(URLService, 'POST', service)).then((value) => { return value})}
+				if(idProfile.profiles==null){return "IdProfile provided is not valid"} else{
+					return Promise.resolve(generalRequest(URLService, 'POST', service)).then((value) => { return "Request done successfully "})}
                 
               })()
         }, 
@@ -67,11 +67,11 @@ export const tutorServiceResolver = {
 				if (service.idProfile!=null){
 					let idProfile = await generalRequest(`${URLprofile}/profile/get/${service.idProfile}`, '').then((value) => {return value});
 
-					if(idProfile.profiles==null){console.log("IdProfile provided is not valid")} else{
-						return  Promise.resolve(generalRequest(`${URLService}/${id}`, 'PUT', service)).then((value) => { return value})}
+					if(idProfile.profiles==null){return "IdProfile provided is not valid"} else{
+						return  Promise.resolve(generalRequest(`${URLService}/${id}`, 'PUT', service)).then((value) => { return "Request done successfully "})}
 
 				} else {
-					return  Promise.resolve(generalRequest(`${URLService}/${id}`, 'PUT', service)).then((value) => { return value})
+					return  Promise.resolve(generalRequest(`${URLService}/${id}`, 'PUT', service)).then((value) => { return "Request done successfully "})
 				}
                 
               })()
