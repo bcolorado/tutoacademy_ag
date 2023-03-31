@@ -1,6 +1,6 @@
 import { generalRequest, getRequest } from '../../utilities/utilities';
 import { URLchat, URLprofile } from '../server';
-
+import { connectProduce } from '../../utilities/queueProducer';
 const URL = URLchat
 
 export const chatResolvers = {
@@ -44,8 +44,20 @@ export const chatResolvers = {
                 let messageQuery =  await generalRequest(`${URLprofile}/profile/get/${chat.messages[0].sender}`, '').then((value) => { return value.profiles});
 
                 // conditions
-                if (senderQuery == null || receiverQuery == null || messageQuery == null){return "Message failed to add, invalid profile"}
-                if (messageQuery._id == senderQuery._id || messageQuery._id == receiverQuery._id){return Promise.resolve(generalRequest(`${URL}/chat/`, 'PATCH', chat)).then((value) => { return value})}
+                if (senderQuery == null || receiverQuery == null || messageQuery == null)
+                {return "Message failed to add, invalid profile"}
+                if (messageQuery._id == senderQuery._id || messageQuery._id == receiverQuery._id){
+
+                    try {
+                        connectProduce(chat);
+                        console.log("Enculado papi")
+                    } catch (error) {
+                        console.log(error)
+                    }
+                    
+                    //return Promise.resolve(generalRequest(`${URL}/chat/`, 'PATCH', chat)).then((value) => { return value})
+                    return "Enqueued successfully"
+                }
                 // else
                 return "message sender not match with this chat" 
             })()

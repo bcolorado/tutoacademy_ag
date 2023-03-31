@@ -1,0 +1,17 @@
+version: "3"
+
+services: 
+  tutoacademy_ag:
+    container_name: tutoacademy_ag
+    restart: always
+    build: .
+    ports: 
+      - "4000:4000"
+    volumes: 
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    logging: 
+          options: 
+               max-size: "10m" 
+               max-file: "3"
+    
