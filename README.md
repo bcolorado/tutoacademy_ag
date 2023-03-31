@@ -1,5 +1,5 @@
 # Tutoacademy Backend-API gateway
 
-Dockerization: 
-  docker-compose build
+Dockerization: <br />
+  docker-compose build<br />
   docker-compose up
