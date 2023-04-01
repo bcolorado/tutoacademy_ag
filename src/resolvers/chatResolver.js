@@ -6,9 +6,9 @@ const URL = URLchat
 export const chatResolvers = {
     // Gets
     Query:{
-        getChatId: (_, { id }) => Promise.resolve(generalRequest(`${URL}/chat/${id}`, '')).then((value) => { return value}),         // get chat by ID
+        getChatId: (_, { id }) => Promise.resolve(generalRequest(`${URL}/chat/id/${id}`, '')).then((value) => { return value}),         // get chat by ID
         getChats: (_) => Promise.resolve(generalRequest(`${URL}/chat`, '')).then((value) => { return value}),                      // get all chats
-        getChatUser: (_, { name }) => Promise.resolve(generalRequest(`${URL}/chat/${name}`, '')).then((value) => { return value}) // get chat by user
+        getChatUser: (_, { name }) => Promise.resolve(generalRequest(`${URL}/chat/user/${name}`, '')).then((value) => { return value}) // get chat by user
     },
     // Filling sender and receiver field in chat with connection to profile
     chat:{
@@ -50,7 +50,6 @@ export const chatResolvers = {
 
                     try {
                         connectProduce(chat);
-                        console.log("Enculado papi")
                     } catch (error) {
                         console.log(error)
                     }
