@@ -21,6 +21,9 @@ export const tutorServiceResolver = {
 	Service:{
         idProfile:({idProfile}) => {return Promise.resolve(generalRequest(`${URLprofile}/profile/get/${idProfile}`, '')).then((value) => {  return value.profiles})},         
        },
+	tutorService:{
+		idProfile:({idProfile}) => {return Promise.resolve(generalRequest(`${URLprofile}/profile/get/${idProfile}`, '')).then((value) => {  return value.profiles})}
+	},
 	Mutation: {
 		
 		createAptitude: (_, { aptitude }) => { 
