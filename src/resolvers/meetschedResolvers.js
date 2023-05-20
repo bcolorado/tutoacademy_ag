@@ -55,24 +55,10 @@ export const meetschedResolvers = {
                 // conditions
 				if (request.accepted != 'true' && request.accepted != 'false') {return "Failed to update request, the field 'accepted' has an invalid value"}
                 if (reqUserQuery == null || tutorQuery == null){return "Failed to update request, one or both profiles are invalid"}
-				// Finding out if scheduled_time is available for the tutor
-				let available = false
-				let dayAndHours = request.scheduled_time.split(', '); //Expected format "Lunes, 09:00 - 13:00"
-				for (let i=0; i<=tutorQuery.schedule.length-1; i++) {
-					if (dayAndHours[0] == tutorQuery.schedule[i].day) {
-						let hours = tutorQuery.schedule[i].hours.split(',')
-						if ( hours.indexOf(dayAndHours[1]) != -1 ) {
-							available = true
-							break
-						}
-					}
-				}
 
-				if (available) {
-					let updateMutation = await generalRequest(`${URL}/requests/${id}`, 'PUT', request).then((value) => { return value })
-					if (!updateMutation.id){return "Failed operation, a request with the given id does not exist."}
-					else {return "Request updated successfully"}
-				}
+				let updateMutation = await generalRequest(`${URL}/requests/${id}`, 'PUT', request).then((value) => { return value })
+				if (!updateMutation.id){return "Failed operation, a request with the given id does not exist."}
+				else {return "Request updated successfully"}
 
               })()
 			},
