@@ -8,15 +8,16 @@ import {meetschedTypeDef, meetschedQueries, meetschedMutations} from "./schemas/
 
 const typeDefs = profileTypeDef;
 import { mergeSchemas } from '../utilities/utilities';
+import { sourcelambdaQueries, sourcelambdaTypeDef } from './schemas/sourcelambdaSchema';
 
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
-		profileTypeDef, chatTypeDef, userTypeDef, tutorServiceTypeDef, meetschedTypeDef
+		profileTypeDef, chatTypeDef, userTypeDef, tutorServiceTypeDef, meetschedTypeDef, sourcelambdaTypeDef
 	],
 	[
-		profileQueries, chatQueries, userQueries, tutorServiceQueries, meetschedQueries
+		profileQueries, chatQueries, userQueries, tutorServiceQueries, meetschedQueries, sourcelambdaQueries
 	],
 	[
 		profileMutations, chatMutations, userMutations, tutorServiceMutations, meetschedMutations
